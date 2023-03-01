@@ -1,0 +1,4 @@
+.logo {
+  display: block;
+  background: center / contain no-repeat url(../../images/logo.svg);
+}
