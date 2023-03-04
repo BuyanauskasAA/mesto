@@ -3,9 +3,22 @@
 
 @import '../blocks/logo/logo.css';
 
+@import '../blocks/content/content.css';
+@import '../blocks/content/__profile/content__profile.css';
+
 @import '../blocks/page/page.css';
 @import '../blocks/page/__container/page__container.css';
 @import '../blocks/page/__header/page__header.css';
 
 @import '../blocks/header/header.css';
 @import '../blocks/header/__logo/header__logo.css';
+
+@import '../blocks/content/content.css';
+
+@import '../blocks/profile/profile.css';
+@import '../blocks/profile/__avatar/profile__avatar.css';
+@import '../blocks/profile/__info/profile__info.css';
+@import '../blocks/profile/__title/profile__title.css';
+@import '../blocks/profile/__subtitle/profile__subtitle.css';
+@import '../blocks/profile/__edit-button/profile__edit-button.css';
+@import '../blocks/profile/__add-button/profile__add-button.css';
