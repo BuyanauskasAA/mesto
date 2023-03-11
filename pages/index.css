@@ -2,9 +2,11 @@
 @import '../vendor/fonts/fonts.css';
 
 @import '../blocks/logo/logo.css';
+@import '../blocks/button/button.css';
 
 @import '../blocks/content/content.css';
 @import '../blocks/content/__profile/content__profile.css';
+@import '../blocks/content/__elements/content__elements.css';
 
 @import '../blocks/page/page.css';
 @import '../blocks/page/__container/page__container.css';
@@ -13,8 +15,6 @@
 @import '../blocks/header/header.css';
 @import '../blocks/header/__logo/header__logo.css';
 
-@import '../blocks/content/content.css';
-
 @import '../blocks/profile/profile.css';
 @import '../blocks/profile/__avatar/profile__avatar.css';
 @import '../blocks/profile/__info/profile__info.css';
@@ -22,3 +22,12 @@
 @import '../blocks/profile/__subtitle/profile__subtitle.css';
 @import '../blocks/profile/__edit-button/profile__edit-button.css';
 @import '../blocks/profile/__add-button/profile__add-button.css';
+
+@import '../blocks/elements/elements.css';
+@import '../blocks/elements/__container/elements__container.css';
+@import '../blocks/element/element.css';
+@import '../blocks/element/__image/element__image.css';
+@import '../blocks/element/__title-section/element__title-section.css';
+@import '../blocks/element/__title/element__title.css';
+@import '../blocks/element/__like-button/element__like-button.css';
+@import '../blocks/element/__like-button/_active/element__like-button_active.css';
