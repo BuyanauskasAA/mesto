@@ -1,0 +1,6 @@
+.element__title-section {
+  display: flex;
+  min-height: 80px;
+  justify-content: space-between;
+  background-color: #fff;
+}
