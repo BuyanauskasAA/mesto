@@ -4,3 +4,9 @@
   flex: 0 0 auto;
   border-radius: 50%;
 }
+
+@media (max-width: 320px) {
+  .profile__avatar {
+    margin-bottom: 26px;
+  }
+}

@@ -1,20 +1,16 @@
 .profile__title {
+  margin: 0 0 9px;
   display: inline-block;
-  margin: 0;
   font-size: 42px;
   font-weight: 500;
   line-height: 1.14;
   color: #fff;
 }
 
-.profile__title::after {
-  content: '';
-  width: 24px;
-  height: 24px;
-  margin-left: 20px;
-  padding: 0;
-  border: 0;
-  display: inline-block;
-  background: center / contain no-repeat url(../../../images/edit_button.svg);
-  cursor: pointer;
+@media (max-width: 320px) {
+  .profile__title {
+    font-size: 27px;
+    line-height: 1.22;
+    text-align: center;
+  }
 }

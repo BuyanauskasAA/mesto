@@ -1,11 +1,15 @@
 .profile__add-button {
   width: 150px;
   height: 50px;
-  padding: 0;
-  border: 0;
-  display: block;
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  background: center / contain no-repeat url(../../../images/add-button.svg);
-  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  flex: none;
+  background: center / 22px 22px no-repeat url(../../../images/add-button.svg);
+}
+
+@media (max-width: 320px) {
+  .profile__add-button {
+    width: 100%;
+    background-size: 16px 16px;
+  }
 }
