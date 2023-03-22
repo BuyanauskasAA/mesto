@@ -27,7 +27,6 @@ const closePopupByClickOnOverlay = function (event) {
 
 const savePopupData = function (event) {
   event.preventDefault();
-  console.log(event);
   profileName.textContent = popupInputName.value;
   profileProfession.textContent = popupInputProfession.value;
   closePopup();
