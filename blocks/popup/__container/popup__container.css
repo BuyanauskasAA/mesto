@@ -8,7 +8,7 @@
   background-color: #fff;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
   .popup__container {
     width: 282px;
     min-height: 322px;

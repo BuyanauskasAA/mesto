@@ -3,7 +3,7 @@
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
   .popup__input_type_profession {
     margin-bottom: 45px;
   }

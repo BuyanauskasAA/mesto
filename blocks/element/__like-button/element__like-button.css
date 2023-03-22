@@ -3,7 +3,7 @@
   height: 19px;
   flex: none;
   background: center / contain no-repeat url(../../../images/like.svg);
-  transition: opacity 0.25s;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .element__like-button:hover {

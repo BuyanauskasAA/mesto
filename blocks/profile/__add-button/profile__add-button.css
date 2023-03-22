@@ -5,11 +5,17 @@
   border-radius: 2px;
   flex: none;
   background: center / 22px 22px no-repeat url(../../../images/add-button.svg);
+  transition: opacity 0.2s ease-in-out;
 }
 
-@media (max-width: 320px) {
+.profile__add-button:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
   .profile__add-button {
     width: 100%;
+    max-width: 581px;
     background-size: 16px 16px;
   }
 }

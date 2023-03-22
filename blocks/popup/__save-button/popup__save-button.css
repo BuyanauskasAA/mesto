@@ -16,7 +16,7 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
   .popup__save-button {
     height: 46px;
     font-size: 14px;

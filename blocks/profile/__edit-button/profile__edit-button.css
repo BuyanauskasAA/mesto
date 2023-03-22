@@ -8,9 +8,14 @@
   top: 16px;
   flex: none;
   background: center / 10px 10px no-repeat url(../../../images/edit-button.svg);
+  transition: opacity 0.2s ease-in-out;
 }
 
-@media (max-width: 320px) {
+.profile__edit-button:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
   .profile__edit-button {
     width: 18px;
     height: 18px;
