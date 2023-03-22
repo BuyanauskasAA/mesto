@@ -59,7 +59,7 @@
             <img class="element__image" src="./images/dombai.png" alt="Домбай">
             <div class="element__title-section">
               <h2 class="element__title">Домбай</h2>
-              <button class="button element__like-button"></button>
+              <button class="button element__like-button element__like-button_active"></button>
             </div>
           </li>
           <li class="element">
@@ -76,7 +76,17 @@
       <h2 class="footer__copyright">&copy; 2023 Mesto Russia</h2>
     </footer>
   </div>
-  <script src="./pages/index.js"></script>
+  <section class="popup">
+    <form class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Ваше имя" required>
+      <input class="popup__input popup__input_type_profession" type="text" name="profession" placeholder="Ваша профессия" required>
+      <button class="button popup__save-button" type="submit">Сохранить</button>
+      <button class="button popup__close-button" type="button"></button>
+    </form>
+  </section>
+
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
