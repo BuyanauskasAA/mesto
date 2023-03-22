@@ -1,0 +1,10 @@
+.popup__input_type_profession {
+  margin-bottom: 48px;
+}
+
+
+@media (max-width: 320px) {
+  .popup__input_type_profession {
+    margin-bottom: 45px;
+  }
+}
