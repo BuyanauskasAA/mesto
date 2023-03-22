@@ -1,12 +1,12 @@
 .profile__edit-button {
-  width: 24px;
-  height: 24px;
-  border: 1px solid #fff;
-  display: block;
   position: absolute;
   top: 37px;
   left: calc(100% + 20px);
+  display: block;
   flex: none;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
   background: center / 10px 10px no-repeat url(../../../images/edit-button.svg);
   transition: opacity 0.2s ease-in-out;
 }
@@ -17,10 +17,10 @@
 
 @media (max-width: 1024px) {
   .profile__edit-button {
-    width: 18px;
-    height: 18px;
     top: 8px;
     left: calc(100% + 10px);
+    width: 18px;
+    height: 18px;
     background-size: 7.5px 7.5px;
   }
 }
