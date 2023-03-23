@@ -20,11 +20,11 @@
           <img class="profile__avatar" src="./images/avatar.png" alt="Аватар">
           <div class="profile__input-container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="button profile__edit-button"></button>
+            <button class="button profile__edit-button" type="button" aria-label="Редактировать"></button>
             <p class="profile__about">Исследователь океана</p>
           </div>
         </div>
-        <button class="button profile__add-button"></button>
+        <button class="button profile__add-button" type="button" area-label="Добавить"></button>
       </section>
       <section class="elements content__elements">
         <ul class="elements__container">
@@ -32,60 +32,60 @@
             <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
             <div class="element__title-section">
               <h2 class="element__title">Эльбрус</h2>
-              <button class="button element__like-button"></button>
+              <button class="button element__like-button" type="button" area-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/kurshskaya-kosa.jpg" alt="Заповедник Куршская коса">
             <div class="element__title-section">
               <h2 class="element__title">Куршская коса</h2>
-              <button class="button element__like-button element__like-button_active"></button>
+              <button class="button element__like-button element__like-button_active" type="button" area-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/ruskeala.jpg" alt="Каньон Рускеала">
             <div class="element__title-section">
               <h2 class="element__title">Рускеала</h2>
-              <button class="button element__like-button"></button>
+              <button class="button element__like-button" type="button" area-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/shihany.jpg" alt="Рифовые массивы Шиханы">
             <div class="element__title-section">
               <h2 class="element__title">Шиханы</h2>
-              <button class="button element__like-button"></button>
+              <button class="button element__like-button" type="button" area-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/kezenoyam.jpg" alt="Озеро Кезенойам">
             <div class="element__title-section">
               <h2 class="element__title">Кезенойам</h2>
-              <button class="button element__like-button element__like-button_active"></button>
+              <button class="button element__like-button element__like-button_active" type="button" area-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/thach.jpg" alt="Гора Большой Тxач">
             <div class="element__title-section">
               <h2 class="element__title">Большой Тxач</h2>
-              <button class="button element__like-button"></button>
+              <button class="button element__like-button" type="button" area-label="Лайк"></button>
             </div>
           </li>
         </ul>
       </section>
     </main>
     <footer class="footer page__footer">
-      <h2 class="footer__copyright">&copy; 2023 Mesto Russia</h2>
+      <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
   </div>
-  <section class="popup">
+  <div class="popup">
     <form class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
       <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Имя" required>
       <input class="popup__input popup__input_type_about" type="text" name="profession" placeholder="О себе" required>
       <button class="button popup__save-button" type="submit">Сохранить</button>
-      <button class="button popup__close-button" type="button"></button>
+      <button class="button popup__close-button" type="button" area-label="Закрыть"></button>
     </form>
-  </section>
+  </div>
 
   <script src="./scripts/index.js"></script>
 </body>
