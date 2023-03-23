@@ -1,10 +1,10 @@
-.popup__input_type_profession {
+.popup__input_type_about {
   margin-bottom: 48px;
 }
 
 
 @media (max-width: 768px) {
-  .popup__input_type_profession {
+  .popup__input_type_about {
     margin-bottom: 45px;
   }
 }

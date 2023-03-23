@@ -1,9 +1,9 @@
-.profile__subtitle {
+.profile__name {
   display: block;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.22;
+  margin: 0 0 9px;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.14;
   color: #fff;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -11,9 +11,9 @@
 }
 
 @media (max-width: 1024px) {
-  .profile__subtitle {
-    font-size: 14px;
-    line-height: 1.21;
+  .profile__name {
+    font-size: 27px;
+    line-height: 1.22;
     text-align: center;
   }
 }
