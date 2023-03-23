@@ -1,17 +1,14 @@
-# Проект: Место
+# [Проект: Место](https://buyanauskasaa.github.io/russian-travel/)
 
-### Обзор
+### Проект позволяет хранить информацию о местах для путешествий.
+### Создайте свой профиль и добавляйте информацию о местах в которых вы уже побывали или планируете побывать.
+### Ведите дневник о своих путешествиях и делитесь ими с друзьями!
 
-* Figma
-* Картинки
-
-**Figma**
-
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
-
-**Картинки**
-
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
-
-Удачи!
+### Технологии проекта
+  * [HTML](https://html.spec.whatwg.org/multipage/)
+  * [CSS](https://www.w3.org/Style/CSS/)
+  * [JavaScript](https://www.javascript.com/)
+  * [Git](https://git-scm.com/)
+  * [Flexbox](https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox)
+  * [Grid Layout](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+  * [БЭМ](https://ru.bem.info/)
