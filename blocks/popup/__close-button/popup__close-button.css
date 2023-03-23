@@ -4,7 +4,7 @@
   right: -40px;
   width: 32px;
   height: 32px;
-  background: center / cover no-repeat url(../../../images/close-button.svg);
+  background: center / cover no-repeat url(../../../images/svg/close-button.svg);
   transition: opacity 0.2s ease-in-out;
 }
 

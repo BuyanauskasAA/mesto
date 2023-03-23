@@ -7,7 +7,7 @@
   width: 24px;
   height: 24px;
   border: 1px solid #fff;
-  background: center / 10px 10px no-repeat url(../../../images/edit-button.svg);
+  background: center / 10px 10px no-repeat url(../../../images/svg/edit-button.svg);
   transition: opacity 0.2s ease-in-out;
 }
 

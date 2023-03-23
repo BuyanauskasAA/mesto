@@ -4,7 +4,7 @@
   height: 50px;
   border: 2px solid #fff;
   border-radius: 2px;
-  background: center / 22px 22px no-repeat url(../../../images/add-button.svg);
+  background: center / 22px 22px no-repeat url(../../../images/svg/add-button.svg);
   transition: opacity 0.2s ease-in-out;
 }
 
