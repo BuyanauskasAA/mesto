@@ -1,4 +1,4 @@
-# [Проект: Место](https://buyanauskasaa.github.io/russian-travel/)
+# [Проект: Место](https://buyanauskasaa.github.io/mesto/)
 
 ### Проект позволяет хранить информацию о местах для путешествий.
 
