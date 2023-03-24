@@ -78,13 +78,15 @@
     </footer>
   </div>
   <div class="popup">
-    <form class="popup__container">
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Имя" required>
-      <input class="popup__input popup__input_type_about" type="text" name="profession" placeholder="О себе" required>
-      <button class="button popup__save-button" type="submit">Сохранить</button>
+    <div class="popup__container">
       <button class="button popup__close-button" type="button" area-label="Закрыть"></button>
-    </form>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form" name="profile-form">
+        <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Имя" required>
+        <input class="popup__input popup__input_type_about" type="text" name="about" placeholder="О себе" required>
+        <button class="button popup__save-button" type="submit">Сохранить</button>
+      </form>
+    </div>
   </div>
 
   <script src="./scripts/index.js"></script>

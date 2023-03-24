@@ -1,5 +1,6 @@
 .popup__input {
   width: 100%;
+  margin-bottom: 20px;
   padding: 9px 1px 8px;
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -11,8 +12,22 @@
   transition: outline 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.popup__input:last-of-type {
+  margin-bottom: 50px;
+}
+
 .popup__input:focus, .popup__input:focus-visible {
   outline: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .popup__input {
+    margin-bottom: 22px;
+  }
+
+  .popup__input:last-of-type {
+    margin-bottom: 45px;
+  }
 }
