@@ -1,4 +1,5 @@
 .element__like-button {
+  flex: none;
   width: 22px;
   height: 19px;
   background: center / contain no-repeat url(../../../images/svg/like.svg);
