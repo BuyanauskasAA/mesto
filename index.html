@@ -16,15 +16,15 @@
     </header>
     <main class="content">
       <section class="profile content__profile">
+        <img class="profile__avatar" src="./images/avatar.png" alt="Аватар">
         <div class="profile__info">
-          <img class="profile__avatar" src="./images/avatar.png" alt="Аватар">
-          <div class="profile__input-container">
+          <div class="profile__edit-container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button class="button profile__edit-button" type="button" aria-label="Редактировать"></button>
-            <p class="profile__about">Исследователь океана</p>
           </div>
+          <p class="profile__about">Исследователь океана</p>
         </div>
-        <button class="button profile__add-button" type="button" area-label="Добавить"></button>
+        <button class="button profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
       <section class="elements content__elements">
         <ul class="elements__container">
@@ -32,42 +32,42 @@
             <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
             <div class="element__title-section">
               <h2 class="element__title">Эльбрус</h2>
-              <button class="button element__like-button" type="button" area-label="Лайк"></button>
+              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/kurshskaya-kosa.jpg" alt="Заповедник Куршская коса">
             <div class="element__title-section">
               <h2 class="element__title">Куршская коса</h2>
-              <button class="button element__like-button element__like-button_active" type="button" area-label="Лайк"></button>
+              <button class="button element__like-button element__like-button_active" type="button" aria-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/ruskeala.jpg" alt="Каньон Рускеала">
             <div class="element__title-section">
               <h2 class="element__title">Рускеала</h2>
-              <button class="button element__like-button" type="button" area-label="Лайк"></button>
+              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/shihany.jpg" alt="Рифовые массивы Шиханы">
             <div class="element__title-section">
               <h2 class="element__title">Шиханы</h2>
-              <button class="button element__like-button" type="button" area-label="Лайк"></button>
+              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/kezenoyam.jpg" alt="Озеро Кезенойам">
             <div class="element__title-section">
               <h2 class="element__title">Кезенойам</h2>
-              <button class="button element__like-button element__like-button_active" type="button" area-label="Лайк"></button>
+              <button class="button element__like-button element__like-button_active" type="button" aria-label="Лайк"></button>
             </div>
           </li>
           <li class="element">
             <img class="element__image" src="./images/thach.jpg" alt="Гора Большой Тxач">
             <div class="element__title-section">
               <h2 class="element__title">Большой Тxач</h2>
-              <button class="button element__like-button" type="button" area-label="Лайк"></button>
+              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
             </div>
           </li>
         </ul>
@@ -79,7 +79,7 @@
   </div>
   <div class="popup">
     <div class="popup__container">
-      <button class="button popup__close-button" type="button" area-label="Закрыть"></button>
+      <button class="button popup__close-button" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" name="profile-form">
         <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Имя" required>
