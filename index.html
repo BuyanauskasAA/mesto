@@ -27,50 +27,7 @@
         <button class="button profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
       <section class="elements content__elements">
-        <ul class="elements__container">
-          <li class="element">
-            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-            <div class="element__title-section">
-              <h2 class="element__title">Эльбрус</h2>
-              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/kurshskaya-kosa.jpg" alt="Заповедник Куршская коса">
-            <div class="element__title-section">
-              <h2 class="element__title">Куршская коса</h2>
-              <button class="button element__like-button element__like-button_active" type="button" aria-label="Лайк"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/ruskeala.jpg" alt="Каньон Рускеала">
-            <div class="element__title-section">
-              <h2 class="element__title">Рускеала</h2>
-              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/shihany.jpg" alt="Рифовые массивы Шиханы">
-            <div class="element__title-section">
-              <h2 class="element__title">Шиханы</h2>
-              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/kezenoyam.jpg" alt="Озеро Кезенойам">
-            <div class="element__title-section">
-              <h2 class="element__title">Кезенойам</h2>
-              <button class="button element__like-button element__like-button_active" type="button" aria-label="Лайк"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/thach.jpg" alt="Гора Большой Тxач">
-            <div class="element__title-section">
-              <h2 class="element__title">Большой Тxач</h2>
-              <button class="button element__like-button" type="button" aria-label="Лайк"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="elements__container"></ul>
       </section>
     </main>
     <footer class="footer page__footer">
@@ -82,12 +39,22 @@
       <button class="button popup__close-button" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" name="profile-form">
-        <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Имя" required>
-        <input class="popup__input popup__input_type_about" type="text" name="about" placeholder="О себе" required>
+        <input class="popup__input popup__input_type_name" type="text" name="profile-name" placeholder="Имя" required>
+        <input class="popup__input popup__input_type_about" type="text" name="profile-about" placeholder="О себе" required>
         <button class="button popup__save-button" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
+
+  <template id="element-template">
+    <li class="element">
+      <img class="element__image">
+      <div class="element__title-section">
+        <h2 class="element__title"></h2>
+        <button class="button element__like-button" type="button" aria-label="Лайк"></button>
+      </div>
+    </li>
+  </template>
 
   <script src="./scripts/index.js"></script>
 </body>
