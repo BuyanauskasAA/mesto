@@ -1,4 +1,4 @@
-.elements__container {
+.cards__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
   grid-template-rows: 362px;

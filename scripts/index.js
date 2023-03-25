@@ -36,8 +36,8 @@ const popupFormElement = popupElement.querySelector('.popup__form');
 const popupInputNameElement = popupElement.querySelector('.popup__input_type_name');
 const popupInputAboutElement = popupElement.querySelector('.popup__input_type_about');
 
-const cardTemplate = document.querySelector('#element-template').content;
-const cardsContainer = document.querySelector('.elements__container');
+const cardTemplate = document.querySelector('#card-template').content;
+const cardsContainer = document.querySelector('.cards__container');
 
 const renderCard = function (card) {
   const title = card.name;
@@ -46,9 +46,9 @@ const renderCard = function (card) {
 
   console.log(cardElement);
 
-  cardElement.querySelector('.element__title').textContent = title;
-  cardElement.querySelector('.element__image').src = link;
-  cardElement.querySelector('.element__image').alt = title;
+  cardElement.querySelector('.card__title').textContent = title;
+  cardElement.querySelector('.card__image').src = link;
+  cardElement.querySelector('.card__image').alt = title;
 
   cardsContainer.append(cardElement);
 }

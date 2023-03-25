@@ -1,4 +1,4 @@
-.element__like-button {
+.card__like-button {
   flex: none;
   width: 22px;
   height: 19px;
@@ -6,6 +6,6 @@
   transition: opacity 0.2s ease-in-out;
 }
 
-.element__like-button:hover {
+.card__like-button:hover {
   opacity: 0.5;
 }

@@ -1,9 +1,9 @@
-.content__elements {
+.content__cards {
   margin-bottom: 67px;
 }
 
 @media (max-width: 768px) {
-  .content__elements {
+  .content__cards {
     margin: 0 19px 48px;
   }
 }
