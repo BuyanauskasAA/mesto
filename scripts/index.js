@@ -43,7 +43,7 @@ const renderCard = function (title, link) {
   deleteButtonElement.addEventListener('click', (event) => {
     const card = event.target.closest('.card');
     card.remove();
-  })
+  });
 
   cardsContainer.append(cardElement);
 }

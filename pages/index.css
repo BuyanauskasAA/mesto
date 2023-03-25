@@ -45,3 +45,8 @@
 @import '../blocks/popup/__input/popup__input.css';
 @import '../blocks/popup/__save-button/popup__save-button.css';
 @import '../blocks/popup/__close-button/popup__close-button.css';
+
+@import '../blocks/image-popup/image-popup.css';
+@import '../blocks/image-popup/__container/image-popup__container.css';
+@import '../blocks/image-popup/__image/image-popup__image.css';
+@import '../blocks/image-popup/__caption/image-popup__caption.css';
