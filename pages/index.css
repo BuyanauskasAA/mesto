@@ -28,6 +28,7 @@
 @import '../blocks/cards/cards.css';
 @import '../blocks/cards/__container/cards__container.css';
 @import '../blocks/card/card.css';
+@import '../blocks/card/__delete-button/card__delete-button.css';
 @import '../blocks/card/__image/card__image.css';
 @import '../blocks/card/__title-section/card__title-section.css';
 @import '../blocks/card/__title/card__title.css';

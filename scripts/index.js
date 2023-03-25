@@ -39,6 +39,12 @@ const renderCard = function (title, link) {
     likeButtonElement.classList.toggle('card__like-button_active');
   });
 
+  const deleteButtonElement = cardElement.querySelector('.card__delete-button');
+  deleteButtonElement.addEventListener('click', (event) => {
+    const card = event.target.closest('.card');
+    card.remove();
+  })
+
   cardsContainer.append(cardElement);
 }
 
