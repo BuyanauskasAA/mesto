@@ -25,6 +25,25 @@ const initialCards = [
   }
 ];
 
+const cardTemplate = document.querySelector('#card-template').content;
+const cardsContainer = document.querySelector('.cards__container');
+
+const renderCard = function (title, link) {
+  const cardElement = cardTemplate.cloneNode(true);
+  cardElement.querySelector('.card__title').textContent = title;
+  cardElement.querySelector('.card__image').src = link;
+  cardElement.querySelector('.card__image').alt = title;
+
+  const likeButtonElement = cardElement.querySelector('.card__like-button');
+  likeButtonElement.addEventListener('click', () => {
+    likeButtonElement.classList.toggle('card__like-button_active');
+  });
+
+  cardsContainer.append(cardElement);
+}
+
+initialCards.forEach((card) => renderCard(card.name, card.link));
+
 const popupElement = document.querySelector('.popup');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close-button');
 const popupOpenButtonElement = document.querySelector('.profile__edit-button');
@@ -35,25 +54,6 @@ const profileAboutElement = document.querySelector('.profile__about');
 const popupFormElement = popupElement.querySelector('.popup__form');
 const popupInputNameElement = popupElement.querySelector('.popup__input_type_name');
 const popupInputAboutElement = popupElement.querySelector('.popup__input_type_about');
-
-const cardTemplate = document.querySelector('#card-template').content;
-const cardsContainer = document.querySelector('.cards__container');
-
-const renderCard = function (card) {
-  const title = card.name;
-  const link = card.link;
-  const cardElement = cardTemplate.cloneNode(true);
-
-  console.log(cardElement);
-
-  cardElement.querySelector('.card__title').textContent = title;
-  cardElement.querySelector('.card__image').src = link;
-  cardElement.querySelector('.card__image').alt = title;
-
-  cardsContainer.append(cardElement);
-}
-
-initialCards.forEach(renderCard);
 
 const openPopup = function () {
   popupInputNameElement.value = profileNameElement.textContent;
