@@ -64,7 +64,7 @@ const closePopupByClickOnOverlay = function (event) {
   }
 }
 
-const renderCard = function (title, link) {
+const renderCard = function (title, link, isInitialCard = true) {
   const cardElement = cardTemplate.cloneNode(true);
   cardElement.querySelector('.card__title').textContent = title;
   cardElement.querySelector('.card__image').src = link;
@@ -89,7 +89,11 @@ const renderCard = function (title, link) {
     openPopup(imagePopup);
   });
 
-  cardsContainer.append(cardElement);
+  if (isInitialCard) {
+    cardsContainer.append(cardElement);
+  } else {
+    cardsContainer.prepend(cardElement);
+  }
 }
 
 const handleSubmitProfileForm = function (event) {
@@ -102,7 +106,7 @@ const handleSubmitProfileForm = function (event) {
 
 const handleSubmitCardForm = function (event) {
   event.preventDefault();
-  renderCard(cardTitle.value, cardLink.value);
+  renderCard(cardTitle.value, cardLink.value, false);
   closePopup(cardPopup);
   cardPopupForm.reset();
 }
