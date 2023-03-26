@@ -1,30 +1,3 @@
-const initialCards = [
-  {
-    name: 'Эльбрус',
-    link: './images/elbrus.jpg'
-  },
-  {
-    name: 'Куршская коса',
-    link: './images/kurshskaya-kosa.jpg'
-  },
-  {
-    name: 'Рускеала',
-    link: './images/ruskeala.jpg'
-  },
-  {
-    name: 'Шиханы',
-    link: './images/shihany.jpg'
-  },
-  {
-    name: 'Кезенойам',
-    link: './images/kezenoyam.jpg'
-  },
-  {
-    name: 'Большой Тxач',
-    link: './images/thach.jpg'
-  }
-];
-
 const profilePopup = document.querySelector('.profile-popup');
 const profilePopupOpenButton = document.querySelector('.profile__edit-button');
 const profilePopupCloseButton = profilePopup.querySelector('.popup__close-button');
@@ -64,11 +37,13 @@ const closePopupByClickOnOverlay = function (event) {
   }
 }
 
-const renderCard = function (title, link, isInitialCard = true) {
+const createCard = function (title, link) {
   const cardElement = cardTemplate.cloneNode(true);
-  cardElement.querySelector('.card__title').textContent = title;
-  cardElement.querySelector('.card__image').src = link;
-  cardElement.querySelector('.card__image').alt = title;
+  const cardElemetTitle = cardElement.querySelector('.card__title');
+  const cardElemetLink = cardElement.querySelector('.card__image');
+  cardElemetTitle.textContent = title;
+  cardElemetLink.src = link;
+  cardElemetLink.alt = title;
 
   const likeButton = cardElement.querySelector('.card__like-button');
   likeButton.addEventListener('click', () => {
@@ -89,6 +64,10 @@ const renderCard = function (title, link, isInitialCard = true) {
     openPopup(imagePopup);
   });
 
+  return cardElement;
+}
+
+const addCard = function (cardElement, isInitialCard = true) {
   if (isInitialCard) {
     cardsContainer.append(cardElement);
   } else {
@@ -98,7 +77,6 @@ const renderCard = function (title, link, isInitialCard = true) {
 
 const handleSubmitProfileForm = function (event) {
   event.preventDefault();
-  console.log(event);
   profileName.textContent = profilePopupNameInput.value;
   profileAbout.textContent = profilePopupAboutInput.value;
   closePopup(profilePopup);
@@ -106,12 +84,16 @@ const handleSubmitProfileForm = function (event) {
 
 const handleSubmitCardForm = function (event) {
   event.preventDefault();
-  renderCard(cardTitle.value, cardLink.value, false);
+  const card = createCard(cardTitle.value, cardLink.value);
+  addCard(card, false);
   closePopup(cardPopup);
   cardPopupForm.reset();
 }
 
-initialCards.forEach((card) => renderCard(card.name, card.link));
+initialCards.forEach((intialCard) => {
+  const card = createCard(intialCard.name, intialCard.link);
+  addCard(card);
+});
 
 profilePopupOpenButton.addEventListener('click', () => {
   profilePopupNameInput.value = profileName.textContent;
@@ -125,7 +107,7 @@ profilePopupForm.addEventListener('submit', handleSubmitProfileForm);
 cardPopupOpenButton.addEventListener('click', () => openPopup(cardPopup));
 cardPopupCloseButton.addEventListener('click', () => closePopup(cardPopup));
 cardPopup.addEventListener('click', closePopupByClickOnOverlay);
-cardPopup.addEventListener('submit', handleSubmitCardForm);
+cardPopupForm.addEventListener('submit', handleSubmitCardForm);
 
 imagePopupCloseButton.addEventListener('click', () => closePopup(imagePopup));
 imagePopup.addEventListener('click', closePopupByClickOnOverlay);
