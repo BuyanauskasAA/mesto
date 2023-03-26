@@ -2,8 +2,9 @@
   flex: none;
   width: 22px;
   height: 19px;
-  background: center / contain no-repeat url(../../../images/svg/like.svg);
-  transition: opacity 0.2s ease-in-out;
+  background: center / contain no-repeat;
+  background-image: url(../../../images/svg/like.svg);
+  transition: opacity 0.2s ease-in-out, background-image 0.25s ease-in-out;
 }
 
 .card__like-button:hover {
