@@ -1,25 +1,30 @@
 export class FormValidator {
   constructor(validationConfig, formElement) {
     this._formElement = formElement;
+
+    this._formSelector = validationConfig.formSelector;
     this._inputSelector = validationConfig.inputSelector;
     this._submitButtonSelector = validationConfig.submitButtonSelector;
     this._inactiveButtonClass = validationConfig.inactiveButtonClass;
     this._inputErrorClass = validationConfig._inputErrorClass;
     this._errorClass = validationConfig.errorClass;
+
+    this._formButton = this._formElement.querySelector(this._submitButtonSelector);
+    this._formInputs = Array.from(this._formElement.querySelectorAll(this._inputSelector));
   }
 
-  _disableSubmitButton(formButton) {
-    formButton.classList.add(this._inactiveButtonClass);
-    formButton.setAttribute('disabled', true);
+  _disableSubmitButton() {
+    this._formButton.classList.add(this._inactiveButtonClass);
+    this._formButton.setAttribute('disabled', true);
   }
 
-  enableSubmitButton(formButton) {
-    formButton.classList.remove(this._inactiveButtonClass);
-    formButton.removeAttribute('disabled');
+  enableSubmitButton() {
+    this._formButton.classList.remove(this._inactiveButtonClass);
+    this._formButton.removeAttribute('disabled');
   }
 
-  _hasInvalidInput(formInputs) {
-    return formInputs.some((input) => !input.checkValidity());
+  _hasInvalidInput() {
+    return this._formInputs.some((input) => !input.checkValidity());
   }
 
   _showInputError(input) {
@@ -45,16 +50,17 @@ export class FormValidator {
   }
 
   _setEventListeners() {
-    const formInputs = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-    const formButton = this._formElement.querySelector(this._submitButtonSelector);
-    this._disableSubmitButton(formButton);
-    formInputs.forEach((input) => {
+    this._disableSubmitButton();
+    this._formElement.addEventListener('reset', () => {
+      this._disableSubmitButton();
+    });
+    this._formInputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input);
-        if (this._hasInvalidInput(formInputs)) {
-          this._disableSubmitButton(formButton);
+        if (this._hasInvalidInput()) {
+          this._disableSubmitButton();
         } else {
-          this.enableSubmitButton(formButton);
+          this.enableSubmitButton();
         }
       })
     })
