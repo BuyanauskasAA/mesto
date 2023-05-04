@@ -4,7 +4,7 @@ export class Card {
     this._link = data.link;
     this._templateSelector = templateSelector;
 
-    this._hadlePopupOpenButton = popupData.hadlePopupOpenButton;
+    this._openPopup = popupData.openPopup;
     this._popup = popupData.popup;
     this._popupImage = popupData.popupImage;
     this._popupCaption = popupData.popupCaption;
@@ -37,6 +37,7 @@ export class Card {
     this._popupImage.src = this._link;
     this._popupImage.alt = this._name;
     this._popupCaption.textContent = this._name;
+    this._openPopup(this._popup);
   }
 
   _setEventListeners() {
@@ -49,7 +50,6 @@ export class Card {
     this._cardImage.addEventListener('click', () => {
       this._handleCardImageClick();
     });
-    this._hadlePopupOpenButton(this._cardImage, this._popup);
   }
 
   generateCard() {
