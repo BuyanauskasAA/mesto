@@ -26,12 +26,6 @@ const imagePopupCaption = imagePopup.querySelector('.image-popup__caption');
 
 const openPopup = (popupElement) => {
   document.addEventListener('keydown', closePopupByEscapeKey);
-  popupElement.addEventListener('click', (event) => {
-    const popupClassList = event.target.classList;
-    if (popupClassList.contains('popup') || popupClassList.contains('popup__close-button')) {
-      closePopup(popupElement);
-    }
-  });
   popupElement.classList.add('popup_opened');
 }
 
@@ -45,6 +39,15 @@ const closePopupByEscapeKey = (event) => {
     const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup);
   }
+}
+
+const handleClosePopup = (popupElement) => {
+  popupElement.addEventListener('click', (event) => {
+    const popupClassList = event.target.classList;
+    if (popupClassList.contains('popup') || popupClassList.contains('popup__close-button')) {
+      closePopup(popupElement);
+    }
+  });
 }
 
 const addCard = (cardElement, isInitialCard = true) => {
@@ -101,9 +104,13 @@ profilePopupOpenButton.addEventListener('click', () => {
   profilePopupAboutInput.value = profileAbout.textContent;
   openPopup(profilePopup);
 });
+handleClosePopup(profilePopup);
 profilePopupForm.addEventListener('submit', handleSubmitProfileForm);
 validateForm(profilePopupForm, true);
 
 cardPopupOpenButton.addEventListener('click', () => openPopup(cardPopup));
+handleClosePopup(cardPopup);
 cardPopupForm.addEventListener('submit', handleSubmitCardForm);
 validateForm(cardPopupForm);
+
+handleClosePopup(imagePopup);
