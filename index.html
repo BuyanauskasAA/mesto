@@ -41,11 +41,11 @@
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" name="profile-form" novalidate>
         <label class="popup__field">
-          <input id="input-profile-name" class="popup__input" type="text" name="profile-name" placeholder="Имя" minlength="2" maxlength="40" required>
+          <input id="input-profile-name" class="popup__input" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required>
           <span class="popup__error input-profile-name-error"></span>
         </label>
         <label class="popup__field">
-          <input id="input-profile-about" class="popup__input" type="text" name="profile-about" placeholder="О себе" minlength="2" maxlength="200" required>
+          <input id="input-profile-about" class="popup__input" type="text" name="about" placeholder="О себе" minlength="2" maxlength="200" required>
           <span class="popup__error input-profile-about-error"></span>
         </label>
         <button class="button popup__submit-button" type="submit">Сохранить</button>
@@ -58,11 +58,11 @@
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="card-form" novalidate>
         <label class="popup__field">
-          <input id="input-card-title" class="popup__input" type="text" name="card-title" placeholder="Название" minlength="2" maxlength="30" required>
+          <input id="input-card-title" class="popup__input" type="text" name="name" placeholder="Название" minlength="2" maxlength="30" required>
           <span class="popup__error input-card-title-error"></span>
         </label>
         <label class="popup__field">
-          <input id="input-card-link" class="popup__input" type="url" name="card-link" placeholder="Ссылка на картинку" required>
+          <input id="input-card-link" class="popup__input" type="url" name="link" placeholder="Ссылка на картинку" required>
           <span class="popup__error input-card-link-error"></span>
         </label>
         <button class="button popup__submit-button" type="submit">Создать</button>
@@ -88,11 +88,7 @@
     </li>
   </template>
 
-  <script type="module" src="./scripts/constants.js"></script>
-  <script type="module" src="./scripts/Card.js"></script>
-  <script type="module" src="./scripts/validation-config.js"></script>
-  <script type="module" src="./scripts/FormValidator.js"></script>
-  <script type="module" src="./scripts/index.js"></script>
+  <script type="module" src="./scripts/pages/index.js"></script>
 </body>
 
 </html>
