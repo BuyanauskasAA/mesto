@@ -16,6 +16,12 @@ import {
   cardPopupForm,
 } from "../scripts/utils/constants.js";
 
+const createCard = (item) => {
+  const card = new Card(item, '#card-template', () => imagePopup.open(item));
+  const cardElement = card.generateCard();
+  return cardElement;
+}
+
 const userInfo = new UserInfo({ nameSelector: '.profile__name', aboutSelector: '.profile__about' });
 
 const profilePopup = new PopupWithForm({
@@ -42,8 +48,7 @@ profileFormValidator.enableValidation();
 const cardPopup = new PopupWithForm({
   popupSelector: '.card-popup',
   handleSumbitButton: (item) => {
-    const card = new Card(item, '#card-template', () => imagePopup.open(item));
-    const cardElement = card.generateCard();
+    const cardElement = createCard(item);
     cardList.addItem(cardElement);
     cardPopup.close();
   }
@@ -64,8 +69,7 @@ imagePopup.setEventListeners();
 const cardList = new Section({
   items: initialCards,
   renderer: (item) => {
-    const card = new Card(item, '#card-template', () => imagePopup.open(item));
-    const cardElement = card.generateCard();
+    const cardElement = createCard(item);
     cardList.addItem(cardElement, false);
   }
 }, '.cards__container');
