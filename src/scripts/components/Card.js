@@ -10,6 +10,7 @@ export default class Card {
     this._likeButton = this._cardElement.querySelector('.card__like-button');
     this._deleteButton = this._cardElement.querySelector('.card__delete-button');
     this._cardImage = this._cardElement.querySelector('.card__image');
+    this._cardTitle = this._cardElement.querySelector('.card__title');
   }
 
   _getTemplate() {
@@ -43,9 +44,9 @@ export default class Card {
 
   generateCard() {
     this._setEventListeners();
-    this._cardElement.querySelector('.card__image').setAttribute('src', this._link);
-    this._cardElement.querySelector('.card__image').setAttribute('alt', this._name);
-    this._cardElement.querySelector('.card__title').textContent = this._name;
+    this._cardImage.setAttribute('src', this._link);
+    this._cardImage.setAttribute('alt', this._name);
+    this._cardTitle.textContent = this._name;
 
     return this._cardElement;
   }
