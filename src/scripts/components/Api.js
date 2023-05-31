@@ -4,110 +4,73 @@ export default class Api {
     this._headers = headers;
   }
 
+  _request(path, options) {
+    return fetch(`${this._baseUrl}/${path}`, options).then(this._checkResponse);
+  }
+
+  _checkResponse(response) {
+    if (response.ok) {
+      return response.json();
+    }
+    return Promise.reject(`Ошибка: ${response.status}`);
+  }
+
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, {
+    return this._request("cards", {
       method: "GET",
       headers: this._headers,
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 
   putLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    return this._request(`cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 
   deleteLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    return this._request(`cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this._headers,
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 
   addCard(body) {
-    return fetch(`${this._baseUrl}/cards`, {
+    return this._request("cards", {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify(body),
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 
   deleteCard(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+    return this._request(`cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return this._request("users/me", {
       method: "GET",
       headers: this._headers,
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 
   setUserInfo(body) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return this._request("users/me", {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(body),
-    }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 
   setUserAvatar(body) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
+    return this._request("users/me/avatar", {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(body),
-    }).then((response) => {
-      if (response.ok) {
-        return response.json;
-      }
-
-      return Promise.reject(`Ошибка: ${response.status}`);
     });
   }
 }
