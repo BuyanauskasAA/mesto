@@ -11,7 +11,8 @@
   transition: border-color 0.3s ease-in-out;
 }
 
-.popup__input:focus, .popup__input:focus-visible {
+.popup__input:focus,
+.popup__input:focus-visible {
   outline: 2px solid rgba(0, 127, 255, 0.8);
   outline-offset: 2px;
   border-radius: 1px;

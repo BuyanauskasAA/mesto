@@ -5,4 +5,4 @@ export const validationConfig = {
   inactiveButtonClass: 'popup__submit-button_disabled',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_active',
-}
+};

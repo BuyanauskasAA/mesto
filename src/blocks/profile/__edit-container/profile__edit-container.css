@@ -1,16 +1,14 @@
 .profile__edit-container {
   display: grid;
   grid-template-columns: minmax(0, max-content) 1fr;
-  grid-template-areas:
-    "name edit-button";
+  grid-template-areas: 'name edit-button';
   margin-top: 22px;
 }
 
 @media (max-width: 1024px) {
   .profile__edit-container {
     grid-template-columns: 38px minmax(0, max-content) 38px;
-    grid-template-areas:
-    ". name edit-button";
+    grid-template-areas: '. name edit-button';
     margin-top: 27px;
   }
 }

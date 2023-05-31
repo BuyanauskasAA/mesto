@@ -4,7 +4,8 @@
   right: 20px;
   width: 18px;
   height: 19px;
-  background: center / cover no-repeat url(../../../images/svg/delete-button.svg);
+  background: center / cover no-repeat
+    url(../../../images/svg/delete-button.svg);
   transition: opacity 0.2s ease-in-out;
 }
 

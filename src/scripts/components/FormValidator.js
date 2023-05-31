@@ -9,8 +9,12 @@ export default class FormValidator {
     this._inputErrorClass = validationConfig._inputErrorClass;
     this._errorClass = validationConfig.errorClass;
 
-    this._formButton = this._formElement.querySelector(this._submitButtonSelector);
-    this._formInputs = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+    this._formButton = this._formElement.querySelector(
+      this._submitButtonSelector
+    );
+    this._formInputs = Array.from(
+      this._formElement.querySelectorAll(this._inputSelector)
+    );
   }
 
   _hasInvalidInput() {
@@ -18,14 +22,18 @@ export default class FormValidator {
   }
 
   _showInputError(input) {
-    const currentInputErrorContainer = document.querySelector(`.${input.id}-error`);
+    const currentInputErrorContainer = document.querySelector(
+      `.${input.id}-error`
+    );
     currentInputErrorContainer.textContent = input.validationMessage;
     input.classList.add(this._inputErrorClass);
     currentInputErrorContainer.classList.add(this._errorClass);
   }
 
   _hideInputError(input) {
-    const currentInputErrorContainer = document.querySelector(`.${input.id}-error`);
+    const currentInputErrorContainer = document.querySelector(
+      `.${input.id}-error`
+    );
     currentInputErrorContainer.textContent = '';
     input.classList.remove(this._inputErrorClass);
     currentInputErrorContainer.classList.remove(this._errorClass);
@@ -52,14 +60,14 @@ export default class FormValidator {
         } else {
           this.enableSubmitButton();
         }
-      })
-    })
+      });
+    });
   }
 
   enableValidation() {
     this._formElement.addEventListener('submit', (event) => {
       event.preventDefault();
-    })
+    });
     this._setEventListeners();
   }
 

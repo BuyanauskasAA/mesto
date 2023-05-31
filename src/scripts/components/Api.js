@@ -16,29 +16,29 @@ export default class Api {
   }
 
   getInitialCards() {
-    return this._request("cards", {
-      method: "GET",
+    return this._request('cards', {
+      method: 'GET',
       headers: this._headers,
     });
   }
 
   putLike(cardId) {
     return this._request(`cards/${cardId}/likes`, {
-      method: "PUT",
+      method: 'PUT',
       headers: this._headers,
     });
   }
 
   deleteLike(cardId) {
     return this._request(`cards/${cardId}/likes`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: this._headers,
     });
   }
 
   addCard(body) {
-    return this._request("cards", {
-      method: "POST",
+    return this._request('cards', {
+      method: 'POST',
       headers: this._headers,
       body: JSON.stringify(body),
     });
@@ -46,29 +46,29 @@ export default class Api {
 
   deleteCard(cardId) {
     return this._request(`cards/${cardId}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: this._headers,
     });
   }
 
   getUserInfo() {
-    return this._request("users/me", {
-      method: "GET",
+    return this._request('users/me', {
+      method: 'GET',
       headers: this._headers,
     });
   }
 
   setUserInfo(body) {
-    return this._request("users/me", {
-      method: "PATCH",
+    return this._request('users/me', {
+      method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify(body),
     });
   }
 
   setUserAvatar(body) {
-    return this._request("users/me/avatar", {
-      method: "PATCH",
+    return this._request('users/me/avatar', {
+      method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify(body),
     });

@@ -5,7 +5,8 @@
   height: 24px;
   margin: 16px 0 0 20px;
   border: 1px solid #fff;
-  background: center / 10px 10px no-repeat url(../../../images/svg/edit-button.svg);
+  background: center / 10px 10px no-repeat
+    url(../../../images/svg/edit-button.svg);
   transition: opacity 0.2s ease-in-out;
 }
 
