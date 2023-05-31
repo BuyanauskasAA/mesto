@@ -4,7 +4,6 @@ import Card from "../scripts/components/Card.js";
 import FormValidator from "../scripts/components/FormValidator.js";
 import PopupWithForm from "../scripts/components/PopupWithForm.js";
 import PopupWithImage from "../scripts/components/PopupWithImage.js";
-import PopupWithConfirmation from "../scripts/components/PopupWithConfirmation";
 import Section from "../scripts/components/Section.js";
 import UserInfo from "../scripts/components/UserInfo.js";
 import { validationConfig } from "../scripts/utils/validation-config.js";
@@ -30,10 +29,10 @@ const createCard = (item) => {
     handlers: {
       handleCardClick: () => imagePopup.open(item),
       handleCardDelete: (cardId, deleteButton) => {
-        const confirmPopup = new PopupWithConfirmation({
+        const confirmPopup = new PopupWithForm({
           popupSelector: ".confirm-popup",
           handleSumbitButton: () => {
-            confirmPopupSubmitButton.textContent = "Удаление...";
+            confirmPopup.renderLoading(true, "Удаление...");
             api
               .deleteCard(cardId)
               .catch((err) => {
@@ -42,10 +41,7 @@ const createCard = (item) => {
               .finally(() => {
                 confirmPopup.close();
                 deleteButton.closest(".card").remove();
-                setTimeout(
-                  () => (confirmPopupSubmitButton.textContent = "Да"),
-                  1000
-                );
+                confirmPopup.renderLoading(false);
               });
           },
         });
@@ -92,14 +88,14 @@ const userInfo = new UserInfo({
 const profilePopup = new PopupWithForm({
   popupSelector: ".profile-popup",
   handleSumbitButton: ({ name, about }) => {
-    profilePopupSubmitButton.textContent = "Сохранение...";
+    profilePopup.renderLoading(true);
     api
       .setUserInfo({ name, about })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
-        profilePopupSubmitButton.textContent = "Сохранить";
+        profilePopup.renderLoading(false);
         userInfo.setUserInfo(name, about);
         profilePopup.close();
       });
@@ -125,7 +121,7 @@ profileFormValidator.enableValidation();
 const cardPopup = new PopupWithForm({
   popupSelector: ".card-popup",
   handleSumbitButton: (item) => {
-    cardPopupSubmitButton.textContent = "Сохранение...";
+    cardPopup.renderLoading(true);
     api
       .addCard(item)
       .then((cardInfo) => {
@@ -137,7 +133,7 @@ const cardPopup = new PopupWithForm({
         console.log(err);
       })
       .finally(() => {
-        cardPopupSubmitButton.textContent = "Создать";
+        cardPopup.renderLoading(false);
         cardPopup.close();
       });
   },
@@ -155,14 +151,14 @@ cardFormValidator.enableValidation();
 const avatarPopup = new PopupWithForm({
   popupSelector: ".avatar-popup",
   handleSumbitButton: ({ link }) => {
-    avatarPopupSubmitButton.textContent = "Сохранение...";
+    avatarPopup.renderLoading(true);
     api
       .setUserAvatar({ avatar: link })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
-        avatarPopupSubmitButton.textContent = "Сохранить";
+        avatarPopup.renderLoading(false);
         userInfo.setUserAvatar(link);
         avatarPopup.close();
       });
