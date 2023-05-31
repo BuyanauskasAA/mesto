@@ -9,17 +9,13 @@ import UserInfo from "../scripts/components/UserInfo.js";
 import { validationConfig } from "../scripts/utils/validation-config.js";
 import {
   profilePopupOpenButton,
-  profilePopupSubmitButton,
   profilePopupForm,
   profilePopupName,
   profilePopupAbout,
   cardPopupOpenButton,
-  cardPopupSubmitButton,
   cardPopupForm,
   avatarPopupOpenButton,
-  avatarPopupSubmitButton,
   avatarPopupForm,
-  confirmPopupSubmitButton,
 } from "../scripts/utils/constants.js";
 
 const createCard = (item) => {
