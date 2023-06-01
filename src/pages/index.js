@@ -39,7 +39,7 @@ const api = new Api({
 Promise.all([api.getInitialCards(), api.getUserInfo()])
   .then(([cards, data]) => {
     cardList.renderItems(cards);
-    userInfo.setFullUserInfo(data);
+    userInfo.setUserInfo(data);
   })
   .catch(console.error);
 
@@ -152,8 +152,8 @@ const avatarPopup = new PopupWithForm({
   popupSelector: '.avatar-popup',
   handleSumbitButton: (inputValues) => {
     const makeRequest = () => {
-      return api.setUserAvatar(inputValues).then(({ avatar }) => {
-        userInfo.setUserAvatar(avatar);
+      return api.setUserAvatar(inputValues).then((data) => {
+        userInfo.setUserInfo(data);
       });
     };
     handleSubmit(makeRequest, avatarPopup);
