@@ -36,10 +36,10 @@ const api = new Api({
   },
 });
 
-Promise.all([api.getInitialCards(), api.getUserInfo()])
-  .then(([cards, data]) => {
-    cardList.renderItems(cards);
+Promise.all([api.getUserInfo(), api.getInitialCards()])
+  .then(([data, cards]) => {
     userInfo.setUserInfo(data);
+    cardList.renderItems(cards);
   })
   .catch(console.error);
 
