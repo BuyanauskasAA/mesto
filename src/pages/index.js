@@ -11,8 +11,6 @@ import { validationConfig } from '../scripts/utils/validation-config.js';
 import {
   profilePopupOpenButton,
   profilePopupForm,
-  profilePopupName,
-  profilePopupAbout,
   cardPopupOpenButton,
   cardPopupForm,
   avatarPopupOpenButton,
@@ -143,10 +141,7 @@ const profilePopup = new PopupWithForm({
 profilePopup.setEventListeners();
 
 profilePopupOpenButton.addEventListener('click', () => {
-  const { name, about } = userInfo.getUserInfo();
-  profilePopupName.value = name;
-  profilePopupAbout.value = about;
-  profileFormValidator.enableSubmitButton();
+  profilePopup.setInputValues(userInfo.getUserInfo());
   profilePopup.open();
 });
 
