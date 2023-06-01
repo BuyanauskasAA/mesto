@@ -10,11 +10,8 @@ import UserInfo from '../scripts/components/UserInfo.js';
 import { validationConfig } from '../scripts/utils/validation-config.js';
 import {
   profilePopupOpenButton,
-  profilePopupForm,
   cardPopupOpenButton,
-  cardPopupForm,
   avatarPopupOpenButton,
-  avatarPopupForm,
 } from '../scripts/utils/constants.js';
 
 const userInfo = new UserInfo({
@@ -135,12 +132,6 @@ profilePopupOpenButton.addEventListener('click', () => {
   profilePopup.open();
 });
 
-const profileFormValidator = new FormValidator(
-  validationConfig,
-  profilePopupForm
-);
-profileFormValidator.enableValidation();
-
 /***** Card Popup *****/
 
 const cardPopup = new PopupWithForm({
@@ -162,9 +153,6 @@ cardPopupOpenButton.addEventListener('click', () => {
   cardPopup.open();
 });
 
-const cardFormValidator = new FormValidator(validationConfig, cardPopupForm);
-cardFormValidator.enableValidation();
-
 /***** Avatar Popup *****/
 
 const avatarPopup = new PopupWithForm({
@@ -185,12 +173,6 @@ avatarPopupOpenButton.addEventListener('click', () => {
   avatarPopup.open();
 });
 
-const avatarFormValidator = new FormValidator(
-  validationConfig,
-  avatarPopupForm
-);
-avatarFormValidator.enableValidation();
-
 /***** Image Popup *****/
 
 const imagePopup = new PopupWithImage('.image-popup');
@@ -200,3 +182,21 @@ imagePopup.setEventListeners();
 
 const confirmPopup = new PopupWithConfirmation('.confirm-popup');
 confirmPopup.setEventListeners();
+
+/***** Validation *****/
+
+const formValidators = {};
+
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement);
+    const formName = formElement.getAttribute('name');
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+};
+
+enableValidation(validationConfig);
+
+formValidators['confirm-form'].enableSubmitButton();
