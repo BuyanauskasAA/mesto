@@ -44,18 +44,14 @@ api
   .then((initialCards) => {
     cardList.renderItems(initialCards);
   })
-  .catch((err) => {
-    console.log(err);
-  });
+  .catch(console.error);
 
 api
   .getUserInfo()
   .then((data) => {
     userInfo.setFullUserInfo(data);
   })
-  .catch((err) => {
-    console.log(err);
-  });
+  .catch(console.error);
 
 const handleSubmit = (request, popupInstance) => {
   popupInstance.renderLoading(true);
@@ -63,9 +59,7 @@ const handleSubmit = (request, popupInstance) => {
     .then(() => {
       popupInstance.close();
     })
-    .catch((err) => {
-      console.log(err);
-    })
+    .catch(console.error)
     .finally(() => {
       popupInstance.renderLoading(false);
     });
@@ -96,9 +90,7 @@ const createCard = (cardInfo) => {
               card.updateLikeCounter(likes.length);
               card.enableLike(false);
             })
-            .catch((err) => {
-              console.log(err);
-            });
+            .catch(console.error);
         } else {
           api
             .putLike(card.getId())
@@ -106,9 +98,7 @@ const createCard = (cardInfo) => {
               card.updateLikeCounter(likes.length);
               card.enableLike(true);
             })
-            .catch((err) => {
-              console.log(err);
-            });
+            .catch(console.error);
         }
       },
     },
